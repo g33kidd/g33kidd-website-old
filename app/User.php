@@ -26,4 +26,32 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
+    /**
+     * Checks if the user has a given role.
+     * @param  string  $role name of the role
+     * @return boolean
+     */
+    public function hasRole($role)
+    {
+        return $this->roles()->contains('name', $role);
+    }
+
+    /**
+     * Probably not needed, just for simplicity right now.
+     * Toggles the current state of the given role on this user.
+     * @param  string $role name of the role
+     */
+    public function toggleRole($role)
+    {
+        return $this->roles()->toggle($role);
+    }
 }
