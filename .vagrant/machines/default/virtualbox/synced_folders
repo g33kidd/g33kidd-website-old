@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/g33kidd":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/g33kidd","hostpath":"/Users/g33kidd/Developer/g33kidd","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/g33kidd/Developer/g33kidd","disabled":false,"__vagrantfile":true}}}

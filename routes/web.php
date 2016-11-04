@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+// Main page routes
+Route::get('/', function() {
     return view('welcome');
 });
+
+
+//
+// Admin Route to render the main template that runs the VueJS Dashboard.
+Route::get(
+    '/admin/{any?}',
+    ['middleware' => ['auth', 'role:admin']],
+    function () {
+        return view('admin');
+    }
+);
