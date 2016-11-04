@@ -8,6 +8,14 @@ class Post extends Model
 {
 
     /**
+     * Relationship for the creator of the post.
+     */
+    public function author()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    /**
      * Relationship for categories.
      */
     public function categories()

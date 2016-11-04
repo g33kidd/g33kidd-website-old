@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'username'
     ];
 
     /**
@@ -26,6 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Posts that the user has created.
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 
     /**
      * The roles that belong to the user.
@@ -53,5 +61,13 @@ class User extends Authenticatable
     public function toggleRole($role)
     {
         return $this->roles()->toggle($role);
+    }
+
+    /**
+     * Notification Channels
+     */
+    public function routeNotificationForEmail()
+    {
+        return $this->email;
     }
 }

@@ -13,10 +13,6 @@ use Illuminate\Foundation\Inspiring;
 |
 */
 
-Artisan::command('setup:admin', function() {
-    $this->comment('This has not been implemented yet.')
-})->describe('Create the default admin user.');
-
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote.');

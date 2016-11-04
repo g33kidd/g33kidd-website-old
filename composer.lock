@@ -4,9 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "35f54692aa22673a7c2bf59d09e5ceef",
-    "content-hash": "c916d959bdb526ada653f67752774292",
+    "hash": "37b41929c4afa9bc6832364dd2a978b3",
+    "content-hash": "5f978c2a32476f6a4f206ba78aae088a",
     "packages": [
+        {
+            "name": "abraham/twitteroauth",
+            "version": "0.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abraham/twitteroauth.git",
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/fc0766220c79087ac8178625d34e88ca29160d5b",
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.3.*",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abraham\\TwitterOAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am",
+                    "homepage": "https://abrah.am",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
+            "homepage": "https://twitteroauth.com",
+            "keywords": [
+                "Twitter API",
+                "Twitter oAuth",
+                "api",
+                "oauth",
+                "rest",
+                "social",
+                "twitter"
+            ],
+            "time": "2016-10-10 14:20:30"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -305,6 +359,53 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "laravel-notification-channels/twitter",
+            "version": "0.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-notification-channels/twitter.git",
+                "reference": "bd05b60917e60aa9174c01c7f39da21e65123e88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-notification-channels/twitter/zipball/bd05b60917e60aa9174c01c7f39da21e65123e88",
+                "reference": "bd05b60917e60aa9174c01c7f39da21e65123e88",
+                "shasum": ""
+            },
+            "require": {
+                "abraham/twitteroauth": "^0.6.4",
+                "illuminate/notifications": "5.3.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "orchestra/testbench": "3.3.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NotificationChannels\\Twitter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Rumpel",
+                    "email": "c.rumpel@kabsi.at",
+                    "homepage": "http://christoph-rumpel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package makes it easy to send notifications via Twitter with Laravel 5.3",
+            "homepage": "https://github.com/laravel-notification-channels/twitter",
+            "time": "2016-10-30 15:19:23"
         },
         {
             "name": "laravel/framework",
