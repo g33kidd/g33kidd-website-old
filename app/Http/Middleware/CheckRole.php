@@ -15,10 +15,10 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role)
     {
-        // Simple for now, but could possibly be used to return a 403.
-        if(! $request->user()->hasRole($role)) {
-            return redirect('home');
+        if(!$request->user()->hasRole($role)) {
+            return response(null, 403);
         }
+
         return $next($request);
     }
 }

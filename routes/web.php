@@ -11,17 +11,15 @@
 |
 */
 
-// Main page routes
+Auth::routes();
 Route::get('/', function() {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth', 'role:admin']], function() {
+Route::group(['middleware' => ['auth', 'role:editor']], function() {
     Route::get('/admin/{any?}', function() {
         return view('admin');
     });
 });
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index');

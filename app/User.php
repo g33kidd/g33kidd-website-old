@@ -50,7 +50,11 @@ class User extends Authenticatable
      */
     public function hasRole($role)
     {
-        return $this->roles()->contains('name', $role);
+        if($this->roles()->where('name', $role)->get()->count() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
