@@ -8,6 +8,10 @@ class Post extends Model
 {
     use Illuminate\Notifications\Notifiable;
 
+    protected $fillable = [
+        'title', 'body', 'published', 'description',
+    ];
+
     /**
      * Relationship for the creator of the post.
      */
