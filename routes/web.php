@@ -16,13 +16,12 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-
-//
-// Admin Route to render the main template that runs the VueJS Dashboard.
-Route::get(
-    '/admin/{any?}',
-    ['middleware' => ['auth', 'role:admin']],
-    function () {
+Route::group(['middleware' => ['auth', 'role:admin']], function() {
+    Route::get('/admin/{any?}', function() {
         return view('admin');
-    }
-);
+    });
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
