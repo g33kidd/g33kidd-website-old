@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('categories_posts', function(Blueprint $table) {
+        Schema::create('category_post', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->integer('post_id')->unsigned();
@@ -37,12 +37,12 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('categories_posts', function(Blueprint $table) {
-            $table->dropForeign('categories_posts_post_id_foreign');
-            $table->dropForeign('categories_posts_category_id_foreign');
+        Schema::table('category_post', function(Blueprint $table) {
+            $table->dropForeign('category_post_post_id_foreign');
+            $table->dropForeign('category_post_category_id_foreign');
         });
 
-        Schema::dropIfExists('categories_posts');
+        Schema::dropIfExists('category_post');
         Schema::dropIfExists('categories');
     }
 }

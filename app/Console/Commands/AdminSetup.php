@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\User;
 use App\Role;
+use App\Notifications\AdminSetupDone;
 
 class AdminSetup extends Command
 {

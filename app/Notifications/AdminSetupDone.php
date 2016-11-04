@@ -42,7 +42,7 @@ class AdminSetupDone extends Notification
     {
         return (new MailMessage)
                     ->greeting('Account setup!')
-                    ->action('Go to website.', url())
+                    ->action('Go to website.', url('/'))
                     ->line('Go do something awesome!');
     }
 }
