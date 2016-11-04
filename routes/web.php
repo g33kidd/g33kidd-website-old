@@ -12,14 +12,11 @@
 */
 
 Auth::routes();
-Route::get('/', function() {
-    return view('welcome');
-});
 
-Route::group(['middleware' => ['auth', 'role:editor']], function() {
+Route::get('/', 'PageController@index');
+
+Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('/admin/{any?}', function() {
         return view('admin');
     });
 });
-
-Route::get('/home', 'HomeController@index');

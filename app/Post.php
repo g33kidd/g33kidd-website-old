@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use Illuminate\Notifications\Notifiable;
 
     /**
      * Relationship for the creator of the post.
