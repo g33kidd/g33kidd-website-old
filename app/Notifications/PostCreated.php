@@ -27,6 +27,6 @@ class PostCreated extends Notification
     public function toTwitter($notifiable)
     {
         $post_url = url('/');
-        return new TwitterStatusUpdate("{$post->title} on my blog! {$post_url}");
+        return new TwitterStatusUpdate("{$notifiable->title} on my blog! {$post_url}");
     }
 }
