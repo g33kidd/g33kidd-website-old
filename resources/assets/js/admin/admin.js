@@ -5,11 +5,11 @@ import { sync } from 'vuex-router-sync'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import axios from 'axios'
 
 Vue.use(Resource)
-Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken)
-    next()
+Vue.prototype.$http = axios.create({
+	headers: {'X-CSRF-TOKEN': Laravel.csrfToken}
 })
 
 sync(store, router)
