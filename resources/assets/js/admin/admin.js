@@ -11,7 +11,6 @@ Vue.prototype.$http = axios.create({
 		'X-CSRF-TOKEN': Laravel.csrfToken
 	}
 })
-// Vue.prototype.$http = axios
 
 sync(store, router)
 
