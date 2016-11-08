@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 // Import api and store modules
 //
+import posts from './posts'
 
 Vue.use(Vuex)
 
@@ -17,7 +18,7 @@ const store = new Vuex.Store({
     actions,
     getters,
     modules: {
-        
+        posts,
     }
 })
 

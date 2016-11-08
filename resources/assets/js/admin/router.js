@@ -10,6 +10,9 @@ const router = new Router({
 
     routes: [
         { path: '/', component: require('views/Home') },
+        { 
+        	path: '/posts', component: require('views/Posts') 
+        }
     ]
 })
 
