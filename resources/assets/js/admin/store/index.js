@@ -8,9 +8,16 @@ import posts from './posts'
 Vue.use(Vuex)
 
 const state = {}
+
 const mutations = {}
+
 const actions = {}
-const getters = {}
+
+const getters = {
+	posts(state) {
+		return state.posts.all
+	}
+}
 
 const store = new Vuex.Store({
     state,

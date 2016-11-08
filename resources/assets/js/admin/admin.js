@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
-
-import App from './App.vue'
-import router from './router'
-import store from './store'
 import axios from 'axios'
-
-Vue.prototype.$http = axios.create({
+window.axios = axios.create({
 	headers: {
 		'X-CSRF-TOKEN': Laravel.csrfToken
 	}
 })
+
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
 sync(store, router)
 

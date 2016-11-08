@@ -7,6 +7,8 @@
 
 <script>
 export default {
-	
+	mounted() {
+		this.$store.dispatch('FETCH_POSTS')
+	}
 }
 </script>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 export default {
 	state: {
-		all: null
+		all: []
 	},
 
 	mutations: {
@@ -16,9 +16,9 @@ export default {
 
 	actions: {
 		FETCH_POSTS(context, payload) {
-			Vue.$http.get('/api/posts')
+			axios.get('/api/posts')
 				.then(response => {
-					context.commit('RECEIVE_POSTS', payload)
+					context.commit('RECEIVE_POSTS', response.data)
 				})
 		},
 
