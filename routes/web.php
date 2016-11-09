@@ -14,6 +14,8 @@
 Auth::routes();
 
 Route::get('/', 'PageController@index');
+Route::get('/{year}/{month}/{slug}', 'PostController@show')->name('post');
+
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('/admin/{any?}', function() {
         return view('admin');

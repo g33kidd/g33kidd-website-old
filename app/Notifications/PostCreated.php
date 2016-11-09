@@ -2,10 +2,11 @@
 
 namespace App\Notifications;
 
+use App\Post;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 use NotificationChannels\Twitter\TwitterChannel;
 use NotificationChannels\Twitter\TwitterStatusUpdate;
 
@@ -24,9 +25,11 @@ class PostCreated extends Notification
         return [TwitterChannel::class];
     }
 
-    public function toTwitter($notifiable)
+    public function toTwitter(Post $post)
     {
-        $post_url = url('/');
-        return new TwitterStatusUpdate("{$notifiable->title} on my blog! {$post_url}");
+        $post_url = route('post', $post->getRouteAttr);
+        $tweet = str_limit($post->description, 114);
+        $tweet .= "... {$post_url}";
+        return new TwitterStatusUpdate($tweet);
     }
 }

@@ -31,6 +31,7 @@ class PostsController extends Controller
 			'description' => $request->input('description'),
 			'body' => $request->input('body'),
 			'published' => $request->input('published'),
+			'slug' => str_slug($request->input('slug'))
 		]);
 
 		// respond with the newly created post
