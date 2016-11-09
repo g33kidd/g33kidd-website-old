@@ -13,11 +13,15 @@
 
 Auth::routes();
 
-Route::get('/', 'PageController@index');
-Route::get('/{year}/{month}/{slug}', 'PostController@show')->name('post');
-
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('/admin/{any?}', function() {
         return view('admin');
-    });
+    })->where('any', '.*');
 });
+
+Route::group(['namespace' => 'Api', 'prefix' => 'api'], function() {
+	Route::resource('posts', 'PostsController');
+});
+
+Route::get('/', 'PageController@index');
+Route::get('/{year}/{month}/{slug}', 'PostController@show')->name('post');

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
 import axios from 'axios'
+ 
 window.axios = axios.create({
 	headers: {
 		'X-CSRF-TOKEN': Laravel.csrfToken

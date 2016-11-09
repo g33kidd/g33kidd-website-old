@@ -27,7 +27,11 @@ class PostCreated extends Notification
 
     public function toTwitter(Post $post)
     {
-        $post_url = route('post', $post->getRouteAttr);
+        $post_url = route('post', [
+            'year' => $post->created_at->year,
+            'month' => $post->created_at->month,
+            'slug' => $post->slug
+        ]);
         $tweet = str_limit($post->description, 114);
         $tweet .= "... {$post_url}";
         return new TwitterStatusUpdate($tweet);

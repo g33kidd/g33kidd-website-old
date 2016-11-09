@@ -14,8 +14,8 @@ class PostController extends Controller
 			->whereMonth('created_at', $month)
 			->where('slug', '=', $slug)
 			->first();
-			
-		return view('post', ['post' => $post]);
+
+		return view('posts.show', ['post' => $post]);
 	}
 
 }

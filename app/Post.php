@@ -10,7 +10,7 @@ class Post extends Model
     use Notifiable;
 
     protected $fillable = [
-        'title', 'body', 'published', 'description',
+        'title', 'body', 'published', 'description', 'slug'
     ];
 
     /**
@@ -42,7 +42,7 @@ class Post extends Model
         return [
             'year' => $this->created_at->year,
             'month' => $this->created_at->month,
-            'slug' => $this->created_at->slug
+            'slug' => $this->slug
         ];
     }
 

@@ -22,7 +22,13 @@ export default {
 				})
 		},
 
-		ADD_POST(context, payload) {},
+		ADD_POST(context, payload) {
+			axios.post('/api/posts', payload)
+				.then(response => {
+					context.commit('ADDED_POST', response.data)
+				})
+		},
+
 		REMOVE_POST(context, payload) {},
 		UPDATE_POST(context, payload) {},
 		PUBLISH_POST(context, payload) {}
