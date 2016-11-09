@@ -14,7 +14,8 @@ const router = new Router({
         	path: '/posts', 
         	component: require('views/Posts'),
         	children: [
-        		{ path: '/', component: require('views/posts/List') }
+        		{ path: '', component: require('views/posts/List') },
+        		{ path: 'new', component: require('views/posts/New') },
         	]
         }
     ]
