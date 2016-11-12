@@ -1,9 +1,15 @@
 <template>
     <div id="app">
-        <router-view></router-view>
+    	<navbar />
+        <router-view />
     </div>
 </template>
 
 <script>
-export default {}
+import Navbar from 'admin/components/layout/Navbar'
+export default {
+	components: {
+		Navbar
+	}
+}
 </script>

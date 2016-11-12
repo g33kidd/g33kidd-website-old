@@ -1,8 +1,8 @@
 <template>
 	<section class="posts">
-		<h3>Posts</h3>
-		<router-link to="posts/new">New</router-link>
-		<router-view></router-view>
+		<div class="container">
+			<router-view></router-view>
+		</div>
 	</section>
 </template>
 

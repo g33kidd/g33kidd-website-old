@@ -11,7 +11,7 @@ class PostsController extends Controller
     
 	public function index()
 	{
-		$posts = Post::with('author', 'categories', 'tags')->get();
+		$posts = Post::with('author', 'categories', 'tags')->orderBy('created_at', 'desc')->get();
 		return response()->json($posts);
 	}
 

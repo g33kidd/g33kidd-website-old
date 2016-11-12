@@ -10,9 +10,9 @@ class PostObserver
 
     public function created(Post $post)
     {
-        if($post->published) {
-            $post->notify(new PostCreated());
-        }
+        // if($post->published) {
+        //     $post->notify(new PostCreated());
+        // }
     }
 
 }

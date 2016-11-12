@@ -9,6 +9,8 @@ class Post extends Model
 {
     use Notifiable;
 
+    protected $with = ['author', 'categories', 'tags'];
+
     protected $fillable = [
         'title', 'body', 'published', 'description', 'slug'
     ];
@@ -35,15 +37,6 @@ class Post extends Model
     public function tags()
     {
         return $this->morphMany('App\Tag', 'taggable');
-    }
-
-    public function getRouteAttrs()
-    {
-        return [
-            'year' => $this->created_at->year,
-            'month' => $this->created_at->month,
-            'slug' => $this->slug
-        ];
     }
 
 }
